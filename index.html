@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云播放器</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div id="app">
+        <div id="top">
+            <input type="text" class="test1" placeholder="请输入歌名/歌手" @keyup.enter='gets' v-model='query'>
+        </div>
+        <div id="main">
+            <div class="top1">
+                <ul class="song_list">
+                    <li v-for="list in musicList" :class="list.id == xuanzhongid ? 'xuanzhong' : ''">
+                        <a href="javascript:;" @click="bofang(list.id,list.name,list.artists[0].name)">
+                            <p class="ppp"><b>{{list.name}}</b>--{{list.artists[0].name}}</p>
+                        </a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="top2">
+                <img :src="musicCover" class="img">
+                <h2>
+                    {{name}}
+                </h2>
+            </div>
+            <div class="top3">
+                <div class="top-test" v-for="item in hotComments">
+                    <div class="top3-img">
+                        <img :src="item.user.avatarUrl" class="img2"><h5>&nbsp;&nbsp;{{item.user.nickname}}</h5>
+                    </div>
+                    <p>{{item.content}}</p>
+                </div>
+            </div>
+        </div>
+        <div id="boom">
+            <audio controls autoplay class="audio" :src="musicUrl">
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
