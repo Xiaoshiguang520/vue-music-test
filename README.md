@@ -12,5 +12,5 @@ api获取地址：[ALAPI](https://www.alapi.cn/)
 
 
 
-![demo](C:\Users\xiaos\Desktop\vue-music-test\demo.png)
+![demo](https://github.com/Xiaoshiguang520/vue-music-test/blob/main/demo.png)
 
